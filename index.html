@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -6,8 +7,7 @@
     <title>Riddhi Bajaj - Chief of Staff Application | Flint.ai</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -24,11 +24,17 @@
             --lavender-mist: #E8DFF5;
             --champagne: #FEF3C7;
 
+            /* Modern Accent Colors */
+            --electric-blue: #0066FF;
+            --neon-purple: #BB00FF;
+            --cyber-cyan: #00FFFF;
+
             /* Neutral Grays */
             --gray-50: #F9FAFB;
             --gray-100: #F3F4F6;
             --gray-200: #E5E7EB;
             --gray-300: #D1D5DB;
+            --gray-400: #9CA3AF;
             --gray-600: #4B5563;
             --gray-700: #374151;
             --gray-800: #1F2937;
@@ -40,10 +46,10 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            line-height: 1.6;
+            font-family: 'Michroma', sans-serif;
+            line-height: 1.7;
             color: var(--gray-900);
-            background: var(--pure-white);
+            background: var(--deep-black);
             overflow-x: hidden;
         }
 
@@ -53,63 +59,67 @@
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(242, 255, 68, 0.2);
             z-index: 1000;
             transition: all 0.3s ease;
         }
 
         .nav.scrolled {
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background: rgba(0, 0, 0, 0.95);
+            border-bottom: 1px solid rgba(242, 255, 68, 0.4);
         }
 
         .nav-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 1rem 2rem;
+            padding: 1.25rem 2.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .nav-logo {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--deep-black);
+            font-size: 0.85rem;
+            font-weight: 400;
+            color: var(--flint-yellow);
             text-decoration: none;
-            letter-spacing: -0.02em;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
         }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 3rem;
             list-style: none;
             align-items: center;
         }
 
         .nav-links a {
-            color: var(--deep-black);
+            color: var(--pure-white);
             text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.3s ease;
+            font-size: 0.7rem;
+            transition: all 0.3s ease;
             position: relative;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
         }
 
         .nav-links a:hover {
-            color: var(--deep-black);
+            color: var(--flint-yellow);
         }
 
         .nav-links a.active::after {
             content: '';
             position: absolute;
-            bottom: -4px;
+            bottom: -8px;
             left: 0;
             right: 0;
             height: 2px;
             background: var(--flint-yellow);
+            box-shadow: 0 0 10px var(--flint-yellow);
         }
 
         /* Hero Section */
@@ -121,7 +131,7 @@
             position: relative;
             overflow: hidden;
             padding: 8rem 2rem 4rem;
-            background: linear-gradient(135deg, var(--gray-50) 0%, var(--pure-white) 100%);
+            background: linear-gradient(180deg, #000000 0%, #0a0a0a 100%);
         }
 
         .hero-bg {
@@ -131,41 +141,56 @@
             right: 0;
             bottom: 0;
             z-index: 0;
-            opacity: 0.6;
+            opacity: 0.4;
+        }
+
+        /* Grid Background */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                linear-gradient(rgba(242, 255, 68, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(242, 255, 68, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: 0;
         }
 
         .hero-bg-orb {
             position: absolute;
             border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.3;
+            filter: blur(120px);
+            opacity: 0.25;
         }
 
         .orb-1 {
-            width: 500px;
-            height: 500px;
-            background: var(--lavender-mist);
-            top: -100px;
-            left: -100px;
-            animation: float 20s ease-in-out infinite;
+            width: 600px;
+            height: 600px;
+            background: var(--flint-yellow);
+            top: -200px;
+            left: -200px;
+            animation: float 25s ease-in-out infinite;
         }
 
         .orb-2 {
-            width: 400px;
-            height: 400px;
-            background: var(--soft-mint);
-            bottom: -100px;
-            right: -100px;
-            animation: float 25s ease-in-out infinite reverse;
+            width: 500px;
+            height: 500px;
+            background: var(--electric-blue);
+            bottom: -150px;
+            right: -150px;
+            animation: float 30s ease-in-out infinite reverse;
         }
 
         .orb-3 {
-            width: 350px;
-            height: 350px;
-            background: var(--champagne);
-            top: 50%;
-            right: 20%;
-            animation: float 30s ease-in-out infinite;
+            width: 450px;
+            height: 450px;
+            background: var(--neon-purple);
+            top: 40%;
+            right: 15%;
+            animation: float 35s ease-in-out infinite;
         }
 
         @keyframes float {
@@ -176,26 +201,16 @@
             }
 
             33% {
-                transform: translate(30px, -30px) scale(1.1);
+                transform: translate(40px, -40px) scale(1.15);
             }
 
             66% {
-                transform: translate(-20px, 20px) scale(0.9);
+                transform: translate(-30px, 30px) scale(0.85);
             }
         }
 
-        /* .hero-content {
-            max-width: 1200px;
-            width: 100%;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        } */
         .hero-content {
-            max-width: 800px;
+            max-width: 1000px;
             width: 100%;
             text-align: center;
             position: relative;
@@ -204,15 +219,14 @@
 
         .hero-text {
             opacity: 0;
-            animation: fadeInUp 0.8s ease forwards;
+            animation: fadeInUp 1s ease forwards;
             animation-delay: 0.2s;
-            text-align: center;
         }
 
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(40px);
             }
 
             to {
@@ -222,50 +236,54 @@
         }
 
         .hero-subheadline {
-            font-size: 0.95rem;
-            color: var(--gray-600);
-            font-weight: 500;
-            margin-bottom: 1rem;
-            letter-spacing: 0.05em;
+            font-size: 0.7rem;
+            color: var(--flint-yellow);
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.2em;
             text-transform: uppercase;
         }
 
         .hero-headline {
-            font-size: 3.5rem;
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            color: var(--deep-black);
-            letter-spacing: -0.03em;
+            font-size: 4rem;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 2rem;
+            color: var(--pure-white);
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
         }
 
         .hero-headline-highlight {
-            background: linear-gradient(135deg, var(--flint-yellow) 100%, var(--champagne) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--flint-yellow);
+            display: block;
+            margin-top: 0.5rem;
+            text-shadow: 0 0 40px rgba(242, 255, 68, 0.5);
         }
 
         .hero-description {
-            font-size: 1.25rem;
-            color: var(--gray-700);
-            margin-bottom: 2.5rem;
-            line-height: 1.7;
+            font-size: 0.95rem;
+            color: var(--gray-300);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            letter-spacing: 0.05em;
         }
 
         .hero-cta {
             display: flex;
-            gap: 1rem;
+            gap: 1.5rem;
             flex-wrap: wrap;
             margin: 0 auto;
             max-width: fit-content;
         }
 
         .btn {
-            padding: 0.875rem 2rem;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
+            padding: 1rem 2.5rem;
+            border-radius: 0;
+            font-size: 0.7rem;
+            font-weight: 400;
             text-decoration: none;
             transition: all 0.3s ease;
             cursor: pointer;
@@ -273,119 +291,182 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            font-family: 'Michroma', sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn:hover::before {
+            left: 100%;
         }
 
         .btn-primary {
             background: var(--flint-yellow);
             color: var(--deep-black);
-            box-shadow: 0 4px 6px rgba(242, 255, 68, 0.25);
+            box-shadow: 0 0 20px rgba(242, 255, 68, 0.4);
         }
 
         .btn-primary:hover {
+            box-shadow: 0 0 30px rgba(242, 255, 68, 0.6);
             transform: translateY(-2px);
-            box-shadow: 0 8px 12px rgba(242, 255, 68, 0.35);
         }
 
         .btn-secondary {
             background: transparent;
-            color: var(--deep-black);
-            border: 2px solid var(--deep-black);
+            color: var(--pure-white);
+            border: 2px solid var(--flint-yellow);
         }
 
         .btn-secondary:hover {
-            background: var(--deep-black);
-            color: var(--pure-white);
+            background: var(--flint-yellow);
+            color: var(--deep-black);
             transform: translateY(-2px);
-        }
-
-        .hero-image {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            animation: fadeInUp 0.8s ease forwards;
-            animation-delay: 0.4s;
-        }
-
-        .hero-photo-wrapper {
-            position: relative;
-            width: 350px;
-            height: 350px;
-            border-radius: 50%;
-            background: var(--pure-white);
-            padding: 8px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-        }
-
-        .hero-photo-inner {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--lavender-mist) 0%, var(--soft-mint) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .hero-photo-placeholder {
-            font-size: 1.25rem;
-            color: var(--gray-600);
-            text-align: center;
-            padding: 2rem;
-            font-weight: 500;
-        }
-
-        .hero-photo-inner img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
         }
 
         /* Section Base Styles */
         .section {
-            padding: 6rem 2rem;
-            max-width: 1200px;
+            padding: 8rem 2rem;
+            max-width: 1400px;
             margin: 0 auto;
+            position: relative;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 5rem;
         }
 
         .section-title {
-            font-size: 2.75rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--deep-black);
-            letter-spacing: -0.02em;
+            font-size: 3rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            color: var(--pure-white);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
         }
 
         .section-subtitle {
-            font-size: 1.15rem;
-            color: var(--gray-600);
-            max-width: 700px;
+            font-size: 0.9rem;
+            color: var(--gray-400);
+            max-width: 800px;
             margin: 0 auto;
-            line-height: 1.7;
+            line-height: 1.8;
+            letter-spacing: 0.05em;
         }
 
         /* Section 1: Why Flint */
         .why-flint {
-            background: var(--gray-100);
+            background: linear-gradient(180deg, #0a0a0a 0%, #000000 100%);
+            border-top: 1px solid rgba(242, 255, 68, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Floating geometric shapes */
+        .why-flint::before,
+        .why-flint::after {
+            content: '';
+            position: absolute;
+            border: 2px solid rgba(242, 255, 68, 0.1);
+            z-index: 0;
+        }
+
+        .why-flint::before {
+            width: 300px;
+            height: 300px;
+            top: 10%;
+            right: 5%;
+            transform: rotate(45deg);
+            animation: rotateShape 30s linear infinite;
+        }
+
+        .why-flint::after {
+            width: 200px;
+            height: 200px;
+            bottom: 15%;
+            left: 8%;
+            border-radius: 50%;
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes rotateShape {
+            0% {
+                transform: rotate(45deg);
+            }
+
+            100% {
+                transform: rotate(405deg);
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.1;
+            }
+
+            50% {
+                transform: scale(1.1);
+                opacity: 0.2;
+            }
         }
 
         .why-flint-content {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            font-size: 1.05rem;
-            line-height: 1.8;
-            color: var(--gray-800);
+            font-size: 0.85rem;
+            line-height: 2;
+            color: var(--gray-300);
+            letter-spacing: 0.03em;
+            position: relative;
+            z-index: 1;
         }
 
         .why-flint-content p {
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            padding-left: 2rem;
+            border-left: 2px solid rgba(242, 255, 68, 0.3);
+            opacity: 0;
+            transform: translateX(-30px);
+            animation: slideInLeft 0.8s ease forwards;
+        }
+
+        .why-flint-content p:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .why-flint-content p:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .why-flint-content p:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .why-flint-content p:nth-child(4) {
+            animation-delay: 0.8s;
+        }
+
+        @keyframes slideInLeft {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
 
         .why-flint-content p:last-child {
@@ -394,34 +475,20 @@
 
         /* Section 2: What I Bring */
         .what-i-bring {
-            background: var(--pure-white);
-        }
-
-        .unfair-advantage {
-            max-width: 800px;
-            margin: 0 auto 4rem;
-            text-align: center;
-            font-size: 1.35rem;
-            font-weight: 500;
-            color: var(--gray-800);
-            font-style: italic;
-            line-height: 1.7;
-            padding: 2rem;
-            background: linear-gradient(135deg, var(--lavender-mist) 0%, var(--soft-mint) 100%);
-            border-radius: 12px;
-            border-left: 4px solid var(--flint-yellow);
+            background: var(--deep-black);
+            border-top: 1px solid rgba(242, 255, 68, 0.1);
         }
 
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
+            gap: 2rem;
             perspective: 1000px;
         }
 
         .flip-card {
             background-color: transparent;
-            height: 400px;
+            height: 450px;
             perspective: 750px;
         }
 
@@ -430,7 +497,7 @@
             width: 100%;
             height: 100%;
             text-align: center;
-            transition: transform 0.6s;
+            transition: transform 0.7s;
             transform-style: preserve-3d;
         }
 
@@ -445,8 +512,7 @@
             height: 100%;
             -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
-            border-radius: 12px;
-            padding: 2rem;
+            padding: 2.5rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -454,262 +520,346 @@
         }
 
         .flip-card-front {
-            background: var(--pure-white);
-            border: 2px solid var(--gray-200);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(242, 255, 68, 0.2);
+            backdrop-filter: blur(10px);
         }
 
         .flip-card-back {
-            background: linear-gradient(135deg, var(--gray-900) 0%, var(--gray-800) 100%);
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
             color: var(--pure-white);
             transform: rotateY(180deg);
             text-align: left;
             justify-content: flex-start;
-            padding: 1.5rem;
+            padding: 2rem;
+            border: 1px solid rgba(242, 255, 68, 0.3);
         }
 
         .card-accent {
-            width: 60px;
-            height: 4px;
-            border-radius: 2px;
-            margin-bottom: 1.5rem;
+            width: 80px;
+            height: 3px;
+            margin-bottom: 2rem;
         }
 
         .card-1 .card-accent {
-            background: #3B82F6;
+            background: var(--electric-blue);
+            box-shadow: 0 0 10px var(--electric-blue);
         }
 
         .card-2 .card-accent {
-            background: #8B5CF6;
+            background: var(--neon-purple);
+            box-shadow: 0 0 10px var(--neon-purple);
         }
 
         .card-3 .card-accent {
-            background: #14B8A6;
+            background: var(--cyber-cyan);
+            box-shadow: 0 0 10px var(--cyber-cyan);
         }
 
         .card-4 .card-accent {
-            background: #F97316;
+            background: var(--flint-yellow);
+            box-shadow: 0 0 10px var(--flint-yellow);
         }
 
         .card-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: var(--deep-black);
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            color: var(--pure-white);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
         }
 
         .card-subtitle {
-            font-size: 1rem;
-            color: var(--gray-600);
-            font-weight: 500;
+            font-size: 0.7rem;
+            color: var(--gray-400);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
         }
 
         .flip-card-back h3 {
-            font-size: 1.25rem;
-            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
             color: var(--flint-yellow);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
         }
 
         .flip-card-back p {
-            font-size: 0.85rem;
-            line-height: 1.5;
-            margin-bottom: 0.8rem;
-            opacity: 0.95;
+            font-size: 0.7rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+            letter-spacing: 0.03em;
         }
 
         .flip-card-back .key-action {
-            font-size: 0.85rem;
-            font-style: italic;
-            opacity: 0.8;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            padding-top: 1rem;
+            font-size: 0.7rem;
+            opacity: 0.7;
+            border-top: 1px solid rgba(242, 255, 68, 0.2);
+            padding-top: 1.5rem;
             margin-top: auto;
+            letter-spacing: 0.03em;
         }
 
         /* Section 3: Why This Role */
         .why-this-role {
-            background: var(--gray-50);
+            background: linear-gradient(180deg, #000000 0%, #0a0a0a 100%);
+            border-top: 1px solid rgba(242, 255, 68, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Abstract animated shapes */
+        .shape-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .abstract-shape {
+            position: absolute;
+            border: 2px solid;
+            opacity: 0.15;
+        }
+
+        .shape-1 {
+            width: 150px;
+            height: 150px;
+            border-color: var(--electric-blue);
+            top: 20%;
+            left: 10%;
+            transform: rotate(30deg);
+            animation: floatRotate 20s ease-in-out infinite;
+        }
+
+        .shape-2 {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border-color: var(--neon-purple);
+            top: 60%;
+            right: 15%;
+            animation: floatScale 15s ease-in-out infinite;
+        }
+
+        .shape-3 {
+            width: 200px;
+            height: 200px;
+            border-color: var(--flint-yellow);
+            bottom: 10%;
+            left: 20%;
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            animation: floatRotate 25s ease-in-out infinite reverse;
+        }
+
+        @keyframes floatRotate {
+
+            0%,
+            100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            25% {
+                transform: translate(20px, -20px) rotate(90deg);
+            }
+
+            50% {
+                transform: translate(0, -40px) rotate(180deg);
+            }
+
+            75% {
+                transform: translate(-20px, -20px) rotate(270deg);
+            }
+        }
+
+        @keyframes floatScale {
+
+            0%,
+            100% {
+                transform: scale(1) translateY(0);
+            }
+
+            50% {
+                transform: scale(1.2) translateY(-30px);
+            }
         }
 
         .role-content {
             max-width: 900px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 3rem;
-            align-items: start;
+            position: relative;
+            z-index: 1;
         }
 
         .role-text {
-            font-size: 1.05rem;
-            line-height: 1.8;
-            color: var(--gray-800);
+            font-size: 0.85rem;
+            line-height: 2;
+            color: var(--gray-300);
+            letter-spacing: 0.03em;
         }
 
         .role-text p {
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            padding-left: 2rem;
+            border-left: 2px solid rgba(242, 255, 68, 0.3);
+            opacity: 0;
+            transform: translateX(-30px);
+            animation: slideInLeft 0.8s ease forwards;
         }
 
-        .role-quote {
-            background: var(--pure-white);
-            padding: 2rem;
-            border-radius: 12px;
-            border-left: 4px solid var(--flint-yellow);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            position: sticky;
-            top: 100px;
+        .role-text p:nth-child(1) {
+            animation-delay: 0.2s;
         }
 
-        .role-quote-image {
-            width: 100%;
-            height: 200px;
-            border-radius: 8px;
-            background: linear-gradient(135deg, var(--lavender-mist) 0%, var(--champagne) 100%);
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gray-600);
-            font-size: 0.9rem;
-            overflow: hidden;
+        .role-text p:nth-child(2) {
+            animation-delay: 0.4s;
         }
 
-        .role-quote-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .role-quote-text {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--gray-900);
-            line-height: 1.6;
-            font-style: italic;
+        .role-text p:nth-child(3) {
+            animation-delay: 0.6s;
         }
 
         /* Section 4: Contact */
         .contact-section {
-            background: var(--pure-white);
-            padding: 6rem 2rem;
+            background: var(--deep-black);
+            padding: 8rem 2rem;
+            border-top: 1px solid rgba(242, 255, 68, 0.1);
         }
 
         .contact-cta {
             text-align: center;
-            margin-bottom: 3rem;
-            font-size: 1.25rem;
-            color: var(--gray-700);
+            margin-bottom: 4rem;
+            font-size: 1rem;
+            color: var(--gray-300);
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
+            letter-spacing: 0.05em;
         }
 
         .contact-links {
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            gap: 3rem;
             flex-wrap: wrap;
             max-width: 800px;
             margin: 0 auto;
         }
 
         .contact-card {
-            background: var(--pure-white);
-            border: 2px solid var(--gray-200);
-            border-radius: 12px;
-            padding: 2rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(242, 255, 68, 0.2);
+            padding: 2.5rem 3rem;
             text-align: center;
-            min-width: 200px;
-            transition: all 0.3s ease;
+            min-width: 220px;
+            transition: all 0.4s ease;
             text-decoration: none;
-            color: var(--deep-black);
+            color: var(--pure-white);
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 1rem;
+            gap: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--flint-yellow) 0%, var(--electric-blue) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .contact-card:hover::before {
+            opacity: 0.1;
         }
 
         .contact-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+            transform: translateY(-8px);
             border-color: var(--flint-yellow);
+            box-shadow: 0 10px 40px rgba(242, 255, 68, 0.2);
         }
 
         .contact-icon {
-            width: 48px;
-            height: 48px;
+            width: 60px;
+            height: 60px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: var(--gray-100);
-            border-radius: 50%;
-            font-size: 1.5rem;
+            background: rgba(242, 255, 68, 0.1);
+            border: 1px solid rgba(242, 255, 68, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-icon svg {
+            width: 28px;
+            height: 28px;
+            fill: var(--flint-yellow);
         }
 
         .contact-label {
-            font-weight: 600;
-            font-size: 1.1rem;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 1;
         }
 
         /* Footer */
         .footer {
             background: var(--deep-black);
-            color: var(--pure-white);
+            color: var(--gray-600);
             text-align: center;
-            padding: 2rem;
-            font-size: 0.9rem;
+            padding: 3rem 2rem;
+            font-size: 0.65rem;
+            border-top: 1px solid rgba(242, 255, 68, 0.1);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
         }
 
         /* Responsive */
+        @media (max-width: 1024px) {
+            .cards-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media (max-width: 968px) {
             .nav-links {
                 display: none;
-            }
-
-            .hero-content {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-                text-align: center;
             }
 
             .hero-headline {
                 font-size: 2.5rem;
             }
 
-            .hero-cta {
-                justify-content: center;
+            .section-title {
+                font-size: 2rem;
             }
 
             .cards-grid {
                 grid-template-columns: 1fr;
             }
-
-            .role-content {
-                grid-template-columns: 1fr;
-            }
-
-            .role-quote {
-                position: relative;
-                top: 0;
-            }
-
-            .contact-links {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
         }
 
         @media (max-width: 640px) {
             .hero-headline {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
 
             .section {
-                padding: 4rem 1.5rem;
+                padding: 5rem 1.5rem;
             }
 
             .btn {
@@ -721,13 +871,18 @@
         /* Scroll Animations */
         .fade-in {
             opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
         }
 
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
+        }
+
+        .fade-in.visible .why-flint-content p,
+        .fade-in.visible .role-text p {
+            animation-play-state: running;
         }
     </style>
 </head>
@@ -735,7 +890,8 @@
 <body>
 
     <nav class="nav" id="navbar">
-        <div class="nav-container"><a href="#home" class="nav-logo">Riddhi Bajaj</a>
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">Riddhi Bajaj</a>
             <ul class="nav-links">
                 <li><a href="#why-flint" class="nav-link">Why Flint</a></li>
                 <li><a href="#why-me" class="nav-link">Why Me</a></li>
@@ -753,26 +909,21 @@
         <div class="hero-content">
             <div class="hero-text">
                 <p class="hero-subheadline">Chief of Staff Application</p>
-                <h1 class="hero-headline">Built to Scale <span class="hero-headline-highlight">Flint's Next
-                        Chapter</span>
+                <h1 class="hero-headline">
+                    Built to Scale
+                    <span class="hero-headline-highlight">Flint's Next Chapter</span>
                 </h1>
-                <p class="hero-description">Strategic operator with over 6 years navigating GTM, analytics
-                    and product across startups. Ready to help Flint turn thousands on the waitlist into
-                    thousands of customers. </p>
-                <div class="hero-cta"><a href="#why-flint" class="btn btn-secondary">Why Flint</a><a href="#why-me"
-                        class="btn btn-secondary">Why Me</a><a href="#contact" class="btn btn-primary">Let's
-                        Talk</a>
+                <p class="hero-description">
+                    Strategic operator with over 6 years navigating GTM, analytics and product across startups. Ready to
+                    help Flint turn thousands on the waitlist into thousands of customers.
+                </p>
+                <div class="hero-cta">
+                    <a href="#why-flint" class="btn btn-secondary">Why Flint</a>
+                    <a href="#why-me" class="btn btn-secondary">Why Me</a>
+                    <a href="#contact" class="btn btn-primary">Let's Talk</a>
                 </div>
             </div>
-            <!-- <div class="hero-image">
-                <div class="hero-photo-wrapper">
-                    <div class="hero-photo-inner">
-                        <img src="riddhi-bajaj.jpeg" alt="Riddhi Bajaj">
-                        <<div class="hero-photo-placeholder">
-                            </div> -->
-            <!-- </div>
-                </div>
-            </div> -->
+        </div>
     </section>
 
     <section class="section why-flint fade-in" id="why-flint">
@@ -780,41 +931,31 @@
             <h2 class="section-title">Why Flint Resonates</h2>
         </div>
         <div class="why-flint-content">
-            <p>At DealStreetAsia,
-                we had been using the same event landing page for almost five years. When I asked why we
-                never changed it,
-                the answer was simple. No time,
-                no bandwidth,
-                and a real fear that a redesign could break registrations right before an event. We finally
-                redesigned it. It took a lot of coordination and testing to make sure nothing
-                broke across forms,
-                tracking,
-                and payments. Thankfully it all held up,
-                but it showed how hard it is to move fast when every change feels risky and
-                resource-heavy.</p>
-            <p>That is the exact problem Flint solves. What also stands out is the timing. With OpenAI
-                and Gemini moving toward ads,
-                the shift from SEO to AEO and GEO is real. Companies that figure out how to rank on
-                ChatGPT and Perplexity,
-                not just Google,
-                will win the next decade. Flint is building for where traffic is actually going.</p>
-            <p>I have done 0 to 1 work before. I helped GradRight validate and scale in the U.S. and
-                unlocked Singapore for DataVinci when it felt out of reach. I know how to move fast
-                without a playbook.</p>
-            <p>This product has real breakout potential,
-                and I want to help navigate that hypergrowth with a team that thinks like founders. That
-                is what I see at Flint. I want to learn from that team and be in the room where those
-                decisions get made.</p>
+            <p>At DealStreetAsia, we had been using the same event landing page for almost five years. When I asked why
+                we never changed it, the answer was simple. No time, no bandwidth, and a real fear that a redesign could
+                break registrations right before an event. We finally redesigned it. It took a lot of coordination and
+                testing to make sure nothing broke across forms, tracking, and payments. Thankfully it all held up, but
+                it showed how hard it is to move fast when every change feels risky and resource-heavy.</p>
+            <p>That is the exact problem Flint solves. What also stands out is the timing. With OpenAI and Gemini moving
+                toward ads, the shift from SEO to AEO and GEO is real. Companies that figure out how to rank on ChatGPT
+                and Perplexity, not just Google, will win the next decade. Flint is building for where traffic is
+                actually going.</p>
+            <p>I have done 0 to 1 work before. I helped GradRight validate and scale in the U.S. and unlocked Singapore
+                for DataVinci when it felt out of reach. I know how to move fast without a playbook.</p>
+            <p>This product has real breakout potential, and I want to help navigate that hypergrowth with a team that
+                thinks like founders. That is what I see at Flint. I want to learn from that team and be in the room
+                where those decisions get made.</p>
         </div>
     </section>
 
     <section class="section what-i-bring fade-in" id="why-me">
         <div class="section-header">
             <h2 class="section-title">What I Bring to the Table</h2>
+            <p class="section-subtitle">
+                I've worked across enough different worlds that I'm comfortable nowhere and everywhere. It keeps me
+                learning, questioning, and building instead of protecting what I already know.
+            </p>
         </div>
-        <p class="contact-cta">My unfair advantage is I've worked across enough different
-            worlds that I'm comfortable nowhere and everywhere. It keeps me learning,
-            questioning, and building instead of protecting what I already know. </p>
         <div class="cards-grid">
 
             <div class="flip-card card-1">
@@ -826,14 +967,11 @@
                     </div>
                     <div class="flip-card-back">
                         <h3>Go-to-Market Operator</h3>
-                        <p>Built multi-channel funnels for
-                            market validation at GradRight → drove PMF discovery</p>
-                        <p>At DataVinci, owned CRM onboarding,
-                            lead segmentation,
-                            campaign execution → unlocked Singapore market entry</p>
-                        <p><strong>Key action: </strong>Designed lead scoring
-                            models and automated nurture sequences that converted cold prospects
-                            into demos</p>
+                        <p>Built multi-channel funnels for market validation at GradRight → drove PMF discovery</p>
+                        <p>At DataVinci, owned CRM onboarding, lead segmentation, campaign execution → unlocked
+                            Singapore market entry</p>
+                        <p class="key-action"><strong>Key action:</strong> Designed lead scoring models and automated
+                            nurture sequences that converted cold prospects into demos</p>
                     </div>
                 </div>
             </div>
@@ -843,25 +981,16 @@
                     <div class="flip-card-front">
                         <div class="card-accent"></div>
                         <h3 class="card-title">Strategic Generalist</h3>
-                        <p class="card-subtitle">Operate across product,
-                            marketing,
-                            ops</p>
+                        <p class="card-subtitle">Operate across product, marketing, ops</p>
                     </div>
                     <div class="flip-card-back">
                         <h3>Strategic Generalist</h3>
-                        <p>Driven startup strategy,
-                            market analysis,
-                            GTM planning across 3 high-growth geographies - India, Singapore, U.S.</p>
-                        <p>At DealStreetAsia, cross-functional project
-                            leadership,
-                            managed stakeholders across editorial,
-                            sales,
-                            product</p>
-                        <p><strong>Key action: </strong>Context-switch
-                            between product roadmaps,
-                            marketing campaigns,
-                            customer success,
-                            and ops—whatever needs solving</p>
+                        <p>Driven startup strategy, market analysis, GTM planning across 3 high-growth geographies -
+                            India, Singapore, U.S.</p>
+                        <p>At DealStreetAsia, cross-functional project leadership, managed stakeholders across
+                            editorial, sales, product</p>
+                        <p class="key-action"><strong>Key action:</strong> Context-switch between product roadmaps,
+                            marketing campaigns, customer success, and ops—whatever needs solving</p>
                     </div>
                 </div>
             </div>
@@ -875,14 +1004,10 @@
                     </div>
                     <div class="flip-card-back">
                         <h3>Growth Through Retention</h3>
-                        <p>Translated user feedback into product/GTM improvements → 40%
-                            retention lift</p>
-                        <p>Led demos,
-                            onboarding flows,
-                            and client reporting with data-driven approach</p>
-                        <p><strong>Key action: </strong>Built feedback
-                            loops between customer conversations and product priorities,
-                            ensuring what we shipped actually mattered</p>
+                        <p>Translated user feedback into product/GTM improvements → 40% retention lift</p>
+                        <p>Led demos, onboarding flows, and client reporting with data-driven approach</p>
+                        <p class="key-action"><strong>Key action:</strong> Built feedback loops between customer
+                            conversations and product priorities, ensuring what we shipped actually mattered</p>
                     </div>
                 </div>
             </div>
@@ -891,24 +1016,16 @@
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
                         <div class="card-accent"></div>
-                        <h3 class="card-title">Ship Fast,
-                            Learn Faster</h3>
+                        <h3 class="card-title">Ship Fast, Learn Faster</h3>
                         <p class="card-subtitle">Founder mindset meets execution</p>
                     </div>
                     <div class="flip-card-back">
-                        <h3>Ship Fast,
-                            Learn Faster</h3>
-                        <p>Built a full-stack FinTech
-                            product prototype in 24 hours (design, architecture,
-                            user journey) → won hackathon</p>
-                        <p>Self-taught Python,
-                            SQL,
-                            ML,
-                            Tableau. Shipped production-grade projects for the
-                            Seahawks</p>
-                        <p><strong>Key
-                                action: </strong>Comfortable in ambiguity,
-                            learn by building</p>
+                        <h3>Ship Fast, Learn Faster</h3>
+                        <p>Built a full-stack FinTech product prototype in 24 hours (design, architecture, user journey)
+                            → won hackathon</p>
+                        <p>Self-taught Python, SQL, ML, Tableau. Shipped production-grade projects for the Seahawks</p>
+                        <p class="key-action"><strong>Key action:</strong> Comfortable in ambiguity, learn by building
+                        </p>
                     </div>
                 </div>
             </div>
@@ -916,48 +1033,31 @@
     </section>
 
     <section class="section why-this-role fade-in">
+        <div class="shape-container">
+            <div class="abstract-shape shape-1"></div>
+            <div class="abstract-shape shape-2"></div>
+            <div class="abstract-shape shape-3"></div>
+        </div>
         <div class="section-header">
             <h2 class="section-title">Why This Role</h2>
         </div>
-        <div class="why-flint-content">
-            <p>I started in product marketing because I liked being close to the customer.
-                Over time,
-                I kept moving closer to the numbers behind the story. That led me into
-                growth analytics,
-                building funnels,
-                scoring leads,
-                and figuring out which levers actually moved revenue. The more I worked
-                across teams,
-                the more I realized I enjoy operating in the gaps between product,
-                growth,
-                and strategy. That is what is pulling me toward a Chief of Staff role. It is
-                the highest-leverage seat for someone who can think analytically,
-                execute quickly,
-                and help founders turn priorities into systems.</p>
-            <p>Flint stands out because of the moment you are in. The autonomous web vision
-                is ambitious,
-                but the timing and talent density make it feel real. This is an inflection
-                point where the right small team can shape how companies acquire and convert
-                traffic in an AI-first world. That is rare.</p>
-            <p>My goal over the next few years is to learn from best-in-class operators
-                while building toward eventually founding. I want to see how strong teams
-                make decisions,
-                allocate resources,
-                and scale without losing speed. Flint feels like the ultimate dojo for
-                someone with analytics depth and real GTM hunger. It is a place to learn
-                fast,
-                contribute meaningfully,
-                and grow alongside people who build like founders.</p>
-        </div>
-        <!-- <div class="role-quote">
-                        <div class="role-quote-image">
-                            < !-- Replace with: <img src="your-photo.jpg" alt="Riddhi Bajaj">-->
-        <!-- [Add
-                    your photo here]
-                </div>
-                <p class="role-quote-text">"Flint feels like the ultimate dojo for someone with
-                    analytics depth and real GTM hunger." </p> -->
-        <!-- </div> -->
+        <div class="role-content">
+            <div class="role-text">
+                <p>I started in product marketing because I liked being close to the customer. Over time, I kept moving
+                    closer to the numbers behind the story. That led me into growth analytics, building funnels, scoring
+                    leads, and figuring out which levers actually moved revenue. The more I worked across teams, the
+                    more I realized I enjoy operating in the gaps between product, growth, and strategy. That is what is
+                    pulling me toward a Chief of Staff role. It is the highest-leverage seat for someone who can think
+                    analytically, execute quickly, and help founders turn priorities into systems.</p>
+                <p>Flint stands out because of the moment you are in. The autonomous web vision is ambitious, but the
+                    timing and talent density make it feel real. This is an inflection point where the right small team
+                    can shape how companies acquire and convert traffic in an AI-first world. That is rare.</p>
+                <p>My goal over the next few years is to learn from best-in-class operators while building toward
+                    eventually founding. I want to see how strong teams make decisions, allocate resources, and scale
+                    without losing speed. Flint feels like the ultimate dojo for someone with analytics depth and real
+                    GTM hunger. It is a place to learn fast, contribute meaningfully, and grow alongside people who
+                    build like founders.</p>
+            </div>
         </div>
     </section>
 
@@ -965,25 +1065,39 @@
         <div class="section-header">
             <h2 class="section-title">Let's Build Together</h2>
         </div>
-        <p class="contact-cta">If this seems like a fit for what you are building, let's talk. </p>
-        <div class="contact-links"><a href="mailto:riddhibajaj.work@gmail.com" class="contact-card">
-                <div class="contact-icon">📧</div><span class="contact-label">Email
-                    Me</span>
-            </a><a href="https://www.linkedin.com/in/riddhibajaj/" target="_blank" class="contact-card">
-                <div class="contact-icon">💼</div><span class="contact-label">LinkedIn</span>
-            </a></div>
+        <p class="contact-cta">If this seems like a fit for what you are building, let's talk.</p>
+        <div class="contact-links">
+            <a href="mailto:riddhibajaj.work@gmail.com" class="contact-card">
+                <div class="contact-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path
+                            d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                    </svg>
+                </div>
+                <span class="contact-label">Email Me</span>
+            </a>
+            <a href="https://www.linkedin.com/in/riddhibajaj/" target="_blank" class="contact-card">
+                <div class="contact-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path
+                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                    </svg>
+                </div>
+                <span class="contact-label">LinkedIn</span>
+            </a>
+        </div>
     </section>
 
     <footer class="footer">
         <p>Built with purpose for Flint.ai | Riddhi Bajaj © 2026</p>
     </footer>
-    <script> // Smooth scroll for navigation links
 
+    <script>
+        // Smooth scroll for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-
                 if (target) {
                     target.scrollIntoView({
                         behavior: 'smooth',
@@ -995,13 +1109,10 @@
 
         // Navbar scroll effect
         const navbar = document.getElementById('navbar');
-
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
                 navbar.classList.add('scrolled');
-            }
-
-            else {
+            } else {
                 navbar.classList.remove('scrolled');
             }
         });
@@ -1012,11 +1123,9 @@
 
         window.addEventListener('scroll', () => {
             let current = '';
-
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
                 const sectionHeight = section.clientHeight;
-
                 if (pageYOffset >= sectionTop - 200) {
                     current = section.getAttribute('id');
                 }
@@ -1024,7 +1133,6 @@
 
             navLinks.forEach(link => {
                 link.classList.remove('active');
-
                 if (link.getAttribute('href') === '#' + current) {
                     link.classList.add('active');
                 }
@@ -1035,9 +1143,7 @@
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
-        }
-
-            ;
+        };
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -1045,9 +1151,7 @@
                     entry.target.classList.add('visible');
                 }
             });
-        }
-
-            , observerOptions);
+        }, observerOptions);
 
         document.querySelectorAll('.fade-in').forEach(el => {
             observer.observe(el);
